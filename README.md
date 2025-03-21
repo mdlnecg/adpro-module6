@@ -17,3 +17,6 @@ Pada tahap ini, saya telah mempelajari bagaimana sebuah server dapat memproses p
 
 Bukti screenshot:
 <img src='img/commit3.png'>
+
+## Milestone 4: Simulation slow response
+Pada bagian ini, saya belajar bagaimana memproses suatu request dengan lambat, yaitu menangani request `GET /sleep HTTP/1.1`. Jika klien mengakses `/sleep`, server akan menunggu selama 5 detik yang dapat dilihat melalui   `(thread::sleep(Duration::from_secs(5)))` sebelum mengembalikan halaman `hello.html`. Saya juga melakukan percobaan dengan mengakses `/sleep` terlebih dahulu, lalu mencoba `/`. Hasilnya, request ke `/` harus menunggu hingga proses `/sleep` selesai setelah 5 detik. Sebaliknya, jika langsung mengakses `/`, server dapat merespons segera tanpa ada penundaan.
